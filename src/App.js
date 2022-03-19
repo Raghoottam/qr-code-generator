@@ -10,7 +10,7 @@ function App() {
     <div className='App'>
       <Navbar/>
       <Homepage/>
-      <Footer/>
+      //<Footer/> Commenting to remove footer until UI is designed
     </div>
   );
 }
