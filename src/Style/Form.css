@@ -1,0 +1,14 @@
+.Form{
+    margin: 0 auto;
+    width:50% /* value of your choice which suits your alignment */
+}
+.field {
+    border-radius: 4px;
+    position: relative;
+    background-color: rgba(255,255,255,0.3);
+    transition: 0.3s all;
+    font-size: larger;
+}
+label{
+    font-size: larger;
+}
