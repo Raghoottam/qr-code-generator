@@ -53,7 +53,7 @@ export default function Form(props) {
             </div>
             <div className='p-1 row'>
                 <label className='col-3 mx-2'>Level</label>
-                <select className="form-select-md sm-3 col-8 field" aria-label=".form-select-sm example" selected={value} onChange={(e) => onLevelChange(e)}>
+                <select className="form-select-md sm-3 col-8 field" aria-label=".form-select-sm example" selected={level} onChange={(e) => onLevelChange(e)}>
                     <option value="L">Low</option>
                     <option value="M">Medium</option>
                     <option value="Q">Quartile</option>
