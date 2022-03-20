@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
 export default function Form(props) {
-    const [level, setLevel] = useState('')
+    //const [level, setLevel] = useState('')
     const [value, setValue] = useState('')
     const [size, setSize] = useState()
     const [title, setTitle] = useState('')
@@ -16,10 +16,10 @@ export default function Form(props) {
         props.onValueChange(e.target.value)
     }
 
-    const onLevelChange = (e) => {
-        setLevel(e.target.value)
-        props.onLevelChange(e.target.value)
-    }
+    // const onLevelChange = (e) => {
+    //     setLevel(e.target.value)
+    //     props.onLevelChange(e.target.value)
+    // }
 
     const onSizeChange = (e) => {
         if (e.target.value < 350) {

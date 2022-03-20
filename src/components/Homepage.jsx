@@ -47,19 +47,6 @@ export default function Homepage() {
     setTitle(Value);
   }
 
-  const downloadQRCode = () => {
-    const canvas = document.getElementById("qrCodeEl");
-    const pngUrl = canvas[0]
-      .toDataURL("image/png")
-      .replace("image/png", "image/octet-stream");
-    let downloadLink = document.createElement("a");
-    downloadLink.href = pngUrl;
-    downloadLink.download = `Qr-Code.png`;
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-  }
-
   return (
     <>
       <Form
@@ -77,7 +64,7 @@ export default function Homepage() {
           <QRCode id="qrCodeEl" value={value} bgColor='#ffffff' fgColor='#000000' level={level} size={size} title={title} />
         </Modal.Body>
         <Modal.Footer className='d-block-inline'>
-          <Button variant="success" onClick={downloadQRCode} className="col-6 w-auto">
+          <Button variant="outline-success" disabled className="col-6 w-auto">
             Download
           </Button>
           <Button variant="danger" onClick={onButtonClick} className="col-6 w-auto">
