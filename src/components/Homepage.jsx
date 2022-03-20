@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect  } from 'react'
 import Form from './Form';
 import QRCode from "react-qr-code";
 import "../Style/homepage.css";
@@ -15,6 +15,12 @@ export default function Homepage() {
   const [value,setValue] = useState('Welcome')
   const [size,setSize] = useState(250)
   const [title,setTitle] = useState('Test Title')
+
+  useEffect(() => {
+    toast.warning('Site is Under Development', {autoClose:3000})
+  });
+
+  
 
   const onButtonClick = () => {
     if(value.length <= 0)
