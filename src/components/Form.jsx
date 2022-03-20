@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
 export default function Form(props) {
-    const [level, setLevel] = useState('')
+    //const [level, setLevel] = useState('')
     const [value, setValue] = useState('')
     const [size, setSize] = useState()
     const [title, setTitle] = useState('')
@@ -16,10 +16,10 @@ export default function Form(props) {
         props.onValueChange(e.target.value)
     }
 
-    const onLevelChange = (e) => {
-        setLevel(e.target.value)
-        props.onLevelChange(e.target.value)
-    }
+    // const onLevelChange = (e) => {
+    //     setLevel(e.target.value)
+    //     props.onLevelChange(e.target.value)
+    // }
 
     const onSizeChange = (e) => {
         if (e.target.value < 350) {
@@ -70,36 +70,36 @@ export default function Form(props) {
                 <div className='title'>
                     Create Your QR Code
                 </div>
-                <div class="floating-form">
+                <div className="shadow p-3 mb-5 floating-form">
                     <div className='padding'></div>
-                    <div class="floating-label">
-                        <textarea class="floating-input floating-textarea" placeholder=" " value={value} onChange={(e) => { onValueChange(e) }}></textarea>
-                        <span class="highlight"></span>
+                    <div className="floating-label">
+                        <textarea className="floating-input floating-textarea" placeholder=" " value={value} onChange={(e) => { onValueChange(e) }}></textarea>
+                        <span className="highlight"></span>
                         <label>Value</label>
                     </div>
 
-                    <div class="floating-label">
-                        <input class="floating-input" type="number" placeholder=" " value={size} onChange={(e) => onSizeChange(e)} />
-                        <span class="highlight"></span>
+                    <div className="floating-label">
+                        <input className="floating-input" type="number" placeholder=" " value={size} onChange={(e) => onSizeChange(e)} />
+                        <span className="highlight"></span>
                         <label>Size</label>
                     </div>
-                    <div class="floating-label">
-                        <select class="floating-select" selected={level} onSelect={(e) => onLevelChange(e)}>
-                            <option value="" selected disabled>Select Level</option>
+                    {/* <div className="floating-label">
+                        <select className="floating-select" defaultValue={level} onSelect={(e) => onLevelChange(e)}>
+                            <option value="" defaultValue disabled>Select Level</option>
                             <option value="L">Low</option>
                             <option value="M">Medium</option>
                             <option value="Q">Quartile</option>
                             <option value="H">High</option>
                         </select>
-                        <span class="highlight"></span>
-                    </div>
+                        <span className="highlight"></span>
+                    </div> */}
 
-                    <div class="floating-label">
-                        <input class="floating-input" type="text" placeholder=" " value={title} onChange={(e) => onTitleChange(e)} />
-                        <span class="highlight"></span>
+                    <div className="floating-label">
+                        <input className="floating-input" type="text" placeholder=" " value={title} onChange={(e) => onTitleChange(e)} />
+                        <span className="highlight"></span>
                         <label>Title</label>
                     </div>
-                    <div class="floating-label">
+                    <div className="floating-label">
                         <button className='btn btn-outline-success' onClick={() => handleOnSubmit()}>Submit</button>
                     </div>
                     <div className='padding'></div>
