@@ -75,29 +75,19 @@ export default function Form(props) {
                     <div className="floating-label">
                         <textarea className="floating-input floating-textarea" placeholder=" " value={value} onChange={(e) => { onValueChange(e) }}></textarea>
                         <span className="highlight"></span>
-                        <label>Value</label>
+                        <label>What should your QR Code read?</label>
                     </div>
 
                     <div className="floating-label">
                         <input className="floating-input" type="number" placeholder=" " value={size} onChange={(e) => onSizeChange(e)} />
                         <span className="highlight"></span>
-                        <label>Size</label>
+                        <label>What should be the size?</label>
                     </div>
-                    {/* <div className="floating-label">
-                        <select className="floating-select" defaultValue={level} onSelect={(e) => onLevelChange(e)}>
-                            <option value="" defaultValue disabled>Select Level</option>
-                            <option value="L">Low</option>
-                            <option value="M">Medium</option>
-                            <option value="Q">Quartile</option>
-                            <option value="H">High</option>
-                        </select>
-                        <span className="highlight"></span>
-                    </div> */}
 
                     <div className="floating-label">
                         <input className="floating-input" type="text" placeholder=" " value={title} onChange={(e) => onTitleChange(e)} />
                         <span className="highlight"></span>
-                        <label>Title</label>
+                        <label>What should be the title?</label>
                     </div>
                     <div className="floating-label">
                         <button className='btn btn-outline-success' onClick={() => handleOnSubmit()}>Submit</button>
