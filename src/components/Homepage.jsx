@@ -17,7 +17,7 @@ export default function Homepage() {
   const [title, setTitle] = useState('Test Title')
 
   useEffect(() => {
-    //toast.warning('Site is Under Development', {autoClose:3000})
+    
   });
 
 
