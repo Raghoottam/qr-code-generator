@@ -12,7 +12,7 @@ export default function Homepage() {
 
   const [showModal, setShowModal] = useState(false);
   const [level, setLevel] = useState('H')
-  const [value, setValue] = useState('Welcome')
+  const [value, setValue] = useState('')
   const [size, setSize] = useState(250)
   const [title, setTitle] = useState('Test Title')
 

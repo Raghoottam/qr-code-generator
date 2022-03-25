@@ -38,7 +38,7 @@ export default function Form(props) {
                 <div className='title'>
                     Create Your QR Code
                 </div>
-                <div className="shadow p-3 mb-5 floating-form">
+                <div className="shadow p-2 mb-6 floating-form">
                     <div className='padding'></div>
                     <div className="floating-label">
                         <textarea className="floating-input floating-textarea" placeholder=" " value={value} onChange={(e) => { onValueChange(e) }}></textarea>
