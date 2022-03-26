@@ -17,15 +17,17 @@ export default function Homepage() {
   const [title, setTitle] = useState('Test Title')
 
   useEffect(() => {
-    
-  });
 
+  });
 
 
   const onButtonClick = () => {
     if (value.length <= 0) {
       toast.error('Value cannot be empty', { autoClose: 3000 })
-    } else {
+    } else if (size < 100 || size > 350) {
+      toast.error('Enter size between 100-350', { autoClose: 2000 })
+    }
+    else {
       setShowModal(!showModal);
     }
 
@@ -47,6 +49,17 @@ export default function Homepage() {
     setTitle(Value);
   }
 
+  const download = () => {
+    const canvas = document.querySelector('.HpQrcode');
+    const pngFile = canvas.toDataURL("image/png");
+
+    const downloadLink = document.createElement("a");
+    downloadLink.download = "qrcode";
+    downloadLink.href = `${pngFile}`;
+    downloadLink.click();
+
+  }
+
   return (
     <>
       <Form
@@ -61,10 +74,10 @@ export default function Homepage() {
           <Modal.Title>Your QR Code</Modal.Title>
         </Modal.Header>
         <Modal.Body className='d-block text-center my-3'>
-          <QRCode id="qrCodeEl" value={value} bgColor='#ffffff' fgColor='#000000' level={level} size={size} title={title} />
+          <QRCode className='HpQrcode' value={value} bgColor='#ffffff' fgColor='#000000' level={level} size={size} title={title}/>
         </Modal.Body>
         <Modal.Footer className='d-block-inline'>
-          <Button variant="outline-success" disabled className="col-6 w-auto">
+          <Button variant="outline-success" onClick={download} disabled className="col-6 w-auto">
             Download
           </Button>
           <Button variant="danger" onClick={onButtonClick} className="col-6 w-auto">
