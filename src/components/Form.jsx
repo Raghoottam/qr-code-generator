@@ -1,6 +1,6 @@
 import '../Style/Form.css'
 import React, { useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
@@ -15,12 +15,8 @@ export default function Form(props) {
     }
 
     const onSizeChange = (e) => {
-        if (e.target.value < 350 && e.target.value > 100) {
             setSize(e.target.value)
             props.onSizeChange(e.target.value)
-        } else {
-            toast.error('Enter size between 100-350', { autoClose: 2000 })
-        }
     }
 
     const onTitleChange = (e) => {
